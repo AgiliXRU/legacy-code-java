@@ -1,6 +1,4 @@
-# bdd-and-tdd
-ATDD and TDD example
-
+# Repository for legacy code meetup
 
 ![A-TDD](https://dzone.com/storage/temp/7012527-atdd-workflow.jpg)
 
