@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Delivery Service</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script lang="javascript">
+        function calculate() {
+            var clientType = document.getElementById("clientType").value;
+            var cartAmount = document.getElementById("cartAmount").value;
+            fetch("/delivery/" + clientType + "/" + cartAmount + "/").then(
+                (response) => response.text().then(
+                        (text) => document.getElementById("result").innerHTML = text,
+                        (error) => alert(error),
+                    ),
+                (error) => alert(error)
+            );
+        }
+    </script>
+</head>
+<body>
+<h1>Delivery Service</h1>
+<label for="clientType">Тип клиента: </label>
+<select name="clientType" id="clientType">
+    <option value="Обычный">Обычный</option>
+    <option value="VIP">VIP</option>
+</select>
+&nbsp;
+<label for="cartAmount">Сумма заказа: </label>
+<input type="text" name="cartAmount" id="cartAmount" value="0"/>
+&nbsp;
+<input type="button" name="send" value="Посчитать" onclick="calculate()"/>
+<br/>
+<br/>
+Итоговая стоимость доставки: <div id="result"></div>
+</body>
+</html>
