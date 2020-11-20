@@ -20,6 +20,24 @@ They worked hard some months and wrote acceptance tests._
 1. Open in a browser [http://localhost:8080](http://localhost:8080).
 1. Run ```src/test/resources/deliver.feature```.
 
+### Go down with test
+```
+class DeliveryControllerShould {
+
+    @ParameterizedTest
+    @CsvSource({
+            "Обычный, 999, 1249",
+            "Обычный, 1000, 1000",
+            "VIP, 999, 999",
+            "VIP, 2499, 2499",
+            "VIP, 2500, 2375"
+    })
+    void calculateDeliveryFee(String clientType, Integer cartAmount, Integer orderAmount) {
+        assertEquals(orderAmount, new DeliveryController().calculate(clientType, cartAmount));
+    }
+}
+```
+
 ### Refactoring
 1. Add SpringTest:
 ```java

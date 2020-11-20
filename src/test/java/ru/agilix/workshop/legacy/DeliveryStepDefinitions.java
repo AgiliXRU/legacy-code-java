@@ -1,4 +1,4 @@
-package ru.agilix.workshop.bddandtdd;
+package ru.agilix.workshop.legacy;
 
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;

@@ -1,4 +1,4 @@
-package ru.agilix.workshop.bddandtdd;
+package ru.agilix.workshop.legacy;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

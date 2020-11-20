@@ -1,4 +1,4 @@
-package ru.agilix.workshop.bddandtdd;
+package ru.agilix.workshop.legacy;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

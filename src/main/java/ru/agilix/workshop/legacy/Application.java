@@ -1,4 +1,4 @@
-package ru.agilix.workshop.bddandtdd;
+package ru.agilix.workshop.legacy;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
