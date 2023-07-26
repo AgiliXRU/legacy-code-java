@@ -7,13 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeliveryControllerShould {
 
-    /*    Примеры:
-                | Тип клиента | Сумма товаров в корзине | Сумма заказа |
-                | "Обычный"   | 999                     | 1249         |
-                | "Обычный"   | 1000                    | 1000         |
-                | "VIP"       | 999                     | 999          |
-                | "VIP"       | 2499                    | 2499         |
-                | "VIP"       | 2500                    | 2375         |*/
     DeliveryController deliveryController;
 
     @BeforeEach
