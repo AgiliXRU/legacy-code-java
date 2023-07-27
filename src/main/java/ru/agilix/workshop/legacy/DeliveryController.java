@@ -14,65 +14,75 @@ import java.sql.SQLException;
 public class DeliveryController {
 
     @GetMapping("/delivery/{clientType}/{cartAmount}/")
-    public Integer calculate(@PathVariable("clientType") String t,
-                             @PathVariable("cartAmount") Integer am) {
+    public Integer calculate(@PathVariable("clientType") String clientType,
+                             @PathVariable("cartAmount") Integer cartAmount) throws Exception {
 
-        String sql = "";
+        String sqlQuery = "SELECT c.discount_amount, c.discount_percent FROM config_table c, client_type t " +
+                "where t.id = c.type and t.type_name = ?";
 
-        if (t.equals("VIP")) {
-            /**
-             * TODO
-             * Перенести в общую таблицу
-             * @see TM-311
-             */
-            sql = "SELECT c.discount_amount, c.discount_percent FROM config_table c, client_type t " +
-                    "where t.id = c.type and t.type_name = ?";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-            Connection conn = null;
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-
-            try {
-                DataSource d = OracleDataSource.create("admin", "p1ssword", "ORCL_PROD_DB1");
-                conn = d.getConnection();
-                ps = conn.prepareStatement(sql);
-                ps.setString(1, t);
-                rs = ps.executeQuery();
-                if (rs.next()) {
-                    int b = rs.getInt(0);
-                    int p = rs.getInt(1);
-                    if (am >= b) {
-                        return Double.valueOf(am * (1 - p / 100.0)).intValue();
-                    } else {
-                        return am;
-                    }
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (rs != null) rs.close();
-                    if (ps != null) ps.close();
-                    if (conn != null) conn.close();
-                } catch (SQLException ignore) {
-                    //ignore.printStackTrace();
+        try {
+            DataSource d = OracleDataSource.create("admin", "p1ssword", "ORCL_PROD_DB1");
+            connection = d.getConnection();
+            preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, clientType);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int b = resultSet.getInt(0);
+                int p = resultSet.getInt(1);
+                switch (clientType) {
+                    case "VIP":
+                        return cartAmount >= b ? Double.valueOf(cartAmount * (1 - p / 100.0)).intValue() : cartAmount;
+                    case "Обычный":
+                        return cartAmount >= 1000 ? cartAmount : cartAmount + 250;
+                    case "Friends&Family":
+                        return Double.valueOf(cartAmount * (1 - 2 / 100.0)).intValue();
+                    default:
+                        throw new Exception("Client type is not found: " + clientType);
                 }
             }
-
-        } else if (t.equals("Обычный")) {
-            if (am >= 1000) {
-                return am;
-            } else {
-                return am + 250;
-            }
-        } else {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             try {
-                throw new Exception("Client is not found" + t);
-            } catch (Exception e) {
-                e.printStackTrace();
+                if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
+                if (connection != null) connection.close();
+            } catch (SQLException ignore) {
+                //ignore.printStackTrace();
             }
         }
 
         return 0;
+    }
+
+    private static ResultSet openDbConnection(
+            String user,
+            String password,
+            String instance,
+            String clientType
+    ) throws SQLException {
+        String sqlQuery = "SELECT c.discount_amount, c.discount_percent FROM config_table c, client_type t " +
+                "where t.id = c.type and t.type_name = ?";
+
+        DataSource d = OracleDataSource.create(user, password, instance);
+        Connection connection = d.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+        preparedStatement.setString(1, clientType);
+
+        return preparedStatement.executeQuery();
+    }
+
+    private static void closeDbConnection(
+            Connection connection,
+            PreparedStatement preparedStatement,
+            ResultSet resultSet
+    ) throws SQLException {
+        if (resultSet != null) resultSet.close();
+        if (preparedStatement != null) preparedStatement.close();
+        if (connection != null) connection.close();
     }
 }

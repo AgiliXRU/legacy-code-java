@@ -36,22 +36,22 @@ repositories {
 
 dependencies {
 
-    compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.mockito:mockito-core:3.6.0"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.mockito:mockito-core:3.6.0"
 
-    testCompile("org.springframework.boot:spring-boot-test") {
+    testImplementation("org.springframework.boot:spring-boot-test") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    testCompile "org.springframework:spring-test:$spring_version"
+    testImplementation "org.springframework:spring-test:$spring_version"
 
-    testCompile "org.junit.jupiter:junit-jupiter-api:$junit_version"
-    testCompile "org.junit.jupiter:junit-jupiter-params:$junit_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junit_version"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
-    testCompile "org.junit.platform:junit-platform-commons:$junit_platform_version"
+    testImplementation "org.junit.platform:junit-platform-commons:$junit_platform_version"
 
-    testCompile "io.cucumber:cucumber-java:$cucumber_version"
-    testCompile "io.cucumber:cucumber-junit:$cucumber_version"
-    testCompile "io.cucumber:cucumber-junit-platform-engine:$cucumber_version"
+    testImplementation "io.cucumber:cucumber-java:$cucumber_version"
+    testImplementation "io.cucumber:cucumber-junit:$cucumber_version"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:$cucumber_version"
 
 }
 
