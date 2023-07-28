@@ -53,6 +53,8 @@ dependencies {
     testImplementation "io.cucumber:cucumber-junit:$cucumber_version"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:$cucumber_version"
 
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
 }
 
 configurations {
