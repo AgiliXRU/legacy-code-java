@@ -4,19 +4,19 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import ru.agilix.workshop.legacy.service.DeliveryService;
+import ru.agilix.workshop.legacy.service.DeliveryCostCalculationService;
+import ru.agilix.workshop.legacy.service.UnknownClientTypeException;
 
 @RestController
 @AllArgsConstructor
 public class DeliveryController {
 
-    DeliveryService deliveryService;
+    DeliveryCostCalculationService deliveryCostCalculationService;
 
     @GetMapping("/delivery/{clientType}/{cartAmount}/")
     public Integer calculate(@PathVariable("clientType") String clientType,
-                             @PathVariable("cartAmount") Integer cartAmount) throws Exception {
+                             @PathVariable("cartAmount") Integer cartAmount) throws UnknownClientTypeException {
 
-        return deliveryService.calculate(clientType, cartAmount);
+        return deliveryCostCalculationService.calculate(clientType, cartAmount);
     }
-
 }

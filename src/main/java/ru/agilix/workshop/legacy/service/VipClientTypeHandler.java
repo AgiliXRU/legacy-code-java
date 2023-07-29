@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Service
-public class VipDeliveryService {
+public class VipClientTypeHandler {
 
     public Integer calculate(Integer cartAmount) {
 

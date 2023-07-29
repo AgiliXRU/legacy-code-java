@@ -3,7 +3,7 @@ package ru.agilix.workshop.legacy.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommonDeliveryService {
+public class CommonClientTypeHandler {
 
     public Integer calculate(Integer cartAmount) {
 

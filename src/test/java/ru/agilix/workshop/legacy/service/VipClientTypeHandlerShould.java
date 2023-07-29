@@ -5,28 +5,27 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class VipDeliveryServiceShould {
+public class VipClientTypeHandlerShould {
 
-    VipDeliveryService vipDeliveryService;
+    VipClientTypeHandler vipClientTypeHandler;
 
     @BeforeEach
     void setUp() {
-        vipDeliveryService = new VipDeliveryService();
+        vipClientTypeHandler = new VipClientTypeHandler();
     }
 
     @Test
     void return_999_when_VIP_and_999_are_given() throws Exception {
-        assertEquals(999, vipDeliveryService.calculate(999).intValue());
+        assertEquals(999, vipClientTypeHandler.calculate(999).intValue());
     }
 
     @Test
     void return_2499_when_VIP_and_2499_are_given() throws Exception {
-        assertEquals(2499, vipDeliveryService.calculate(2499).intValue());
+        assertEquals(2499, vipClientTypeHandler.calculate(2499).intValue());
     }
 
     @Test
     void return_2500_when_VIP_and_2375_are_given() throws Exception {
-        assertEquals(2375, vipDeliveryService.calculate(2500).intValue());
+        assertEquals(2375, vipClientTypeHandler.calculate(2500).intValue());
     }
-
 }
