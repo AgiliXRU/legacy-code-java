@@ -3,8 +3,9 @@ package ru.agilix.workshop.legacy.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DeliveryCostCalculationService {
+public class DeliveryCostCalculationService implements CostCalculationService {
 
+    @Override
     public Integer calculate(String clientType, Integer cartAmount) throws UnknownClientTypeException {
 
         switch (clientType) {
