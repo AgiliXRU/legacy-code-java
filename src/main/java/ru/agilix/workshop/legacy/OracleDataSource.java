@@ -24,6 +24,7 @@ public class OracleDataSource {
         when(resultSet.next()).thenReturn(true);
         when(resultSet.getInt(0)).thenReturn(2500);
         when(resultSet.getInt(1)).thenReturn(5);
+        when(resultSet.getInt(2)).thenReturn(2);
 
         return ds;
     }
