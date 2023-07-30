@@ -3,6 +3,7 @@ buildscript {
     ext.junit_version = "5.7.0"
     ext.junit_platform_version = "1.7.0"
     ext.cucumber_version = "6.8.1"
+    ext.lombok_version = "1.18.20"
 
     repositories {
         maven {
@@ -53,8 +54,8 @@ dependencies {
     testImplementation "io.cucumber:cucumber-junit:$cucumber_version"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:$cucumber_version"
 
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly "org.projectlombok:lombok:$lombok_version"
+    annotationProcessor "org.projectlombok:lombok:$lombok_version"
 }
 
 configurations {
