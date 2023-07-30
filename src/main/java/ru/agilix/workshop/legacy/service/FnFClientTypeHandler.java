@@ -25,7 +25,7 @@ public class FnFClientTypeHandler {
             DataSource d = OracleDataSource.create("admin", "p1ssword", "ORCL_PROD_DB1");
             connection = d.getConnection();
             preparedStatement = connection.prepareStatement(sqlQuery);
-            preparedStatement.setString(1, "VIP");
+            preparedStatement.setString(1, "Friends&Family");
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 int p = resultSet.getInt(2);
