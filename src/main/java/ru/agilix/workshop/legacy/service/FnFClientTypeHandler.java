@@ -5,7 +5,7 @@ import ru.agilix.workshop.legacy.DataSourceConnector;
 import ru.agilix.workshop.legacy.OracleDataSourceConnector;
 
 @Service
-public class FnFClientTypeHandler {
+public class FnFClientTypeHandler implements ClientTypeHandler{
 
     public Integer calculate(Integer cartAmount) {
 

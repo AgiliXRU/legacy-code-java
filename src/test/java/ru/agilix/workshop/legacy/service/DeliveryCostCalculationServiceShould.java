@@ -2,6 +2,7 @@ package ru.agilix.workshop.legacy.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.agilix.workshop.legacy.ClientType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -16,11 +17,29 @@ public class DeliveryCostCalculationServiceShould {
     }
 
     @Test
-    void throwException_whenUnknownClientTypeIsGiven() {
-        String unknownClientType = "Неизвестный";
-        UnknownClientTypeException unknownClientTypeException = assertThrows(UnknownClientTypeException.class, () -> {
-            deliveryCostCalculationService.calculate(unknownClientType, 100500);
-        });
-        assertEquals("Client type is not found: " + unknownClientType, unknownClientTypeException.getMessage());
+    void returnCommonDeliveryService_whenClientIsCommon() {
+        ClientType clientType = ClientType.ОБЫЧНЫЙ;
+
+        final var clientTypeHandler =  deliveryCostCalculationService.getClientDeliveryService(clientType);
+
+        assertEquals(CommonClientTypeHandler.class, clientTypeHandler.getClass());
+    }
+
+    @Test
+    void returnVipDeliveryService_whenClientIsVip() {
+        ClientType clientType = ClientType.VIP;
+
+        final var clientTypeHandler =  deliveryCostCalculationService.getClientDeliveryService(clientType);
+
+        assertEquals(VipClientTypeHandler.class, clientTypeHandler.getClass());
+    }
+
+    @Test
+    void returnFnFDeliveryService_whenClientIsFnF() {
+        ClientType clientType = ClientType.FnF;
+
+        final var clientTypeHandler =  deliveryCostCalculationService.getClientDeliveryService(clientType);
+
+        assertEquals(FnFClientTypeHandler.class, clientTypeHandler.getClass());
     }
 }

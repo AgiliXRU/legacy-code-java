@@ -5,7 +5,7 @@ import ru.agilix.workshop.legacy.DataSourceConnector;
 import ru.agilix.workshop.legacy.OracleDataSourceConnector;
 
 @Service
-public class VipClientTypeHandler {
+public class VipClientTypeHandler implements ClientTypeHandler{
 
     public Integer calculate(Integer cartAmount) {
 
