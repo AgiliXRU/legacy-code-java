@@ -10,11 +10,26 @@ import java.util.HashMap;
 public class BeanConfiguration {
 
     @Bean
+    public CommonClientTypeHandler getCommonClientTypeHandler() {
+        return new CommonClientTypeHandler();
+    }
+
+    @Bean
+    public VipClientTypeHandler getVipClientTypeHandler() {
+        return new VipClientTypeHandler();
+    }
+
+    @Bean
+    public FnFClientTypeHandler getFnFClientTypeHandler() {
+        return new FnFClientTypeHandler();
+    }
+
+    @Bean
     public DeliveryCostCalculationService getDeliveryCostCalculationService() {
         final var handlers = new HashMap<ClientType, ClientTypeHandler>();
-        handlers.put(ClientType.COMMON, new CommonClientTypeHandler());
-        handlers.put(ClientType.VIP, new VipClientTypeHandler());
-        handlers.put(ClientType.FnF, new FnFClientTypeHandler());
+        handlers.put(ClientType.COMMON, getCommonClientTypeHandler());
+        handlers.put(ClientType.VIP, getVipClientTypeHandler());
+        handlers.put(ClientType.FnF, getFnFClientTypeHandler());
         return new DeliveryCostCalculationService(handlers);
     }
 
