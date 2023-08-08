@@ -1,6 +1,7 @@
 package ru.agilix.workshop.legacy.service;
 
 import org.springframework.stereotype.Service;
+import ru.agilix.workshop.legacy.ClientType;
 import ru.agilix.workshop.legacy.DataSourceConnector;
 import ru.agilix.workshop.legacy.OracleDataSourceConnector;
 
@@ -17,5 +18,10 @@ public class FnFClientTypeHandler implements ClientTypeHandler{
         dataSourceConnector.closeConnection();
 
         return Double.valueOf(cartAmount * (1 - p / 100.0)).intValue();
+    }
+
+    @Override
+    public ClientType getType() {
+        return ClientType.FnF;
     }
 }
