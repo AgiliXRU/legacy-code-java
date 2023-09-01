@@ -19,4 +19,5 @@ public class DeliveryController {
 
         return costCalculationService.calculate(clientType, cartAmount);
     }
+
 }
