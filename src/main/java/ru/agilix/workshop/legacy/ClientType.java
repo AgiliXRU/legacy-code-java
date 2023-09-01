@@ -22,4 +22,8 @@ public enum ClientType {
                 .findFirst()
                 .orElseThrow(() -> new UnknownClientTypeException(title));
     }
+
+    public String getTitle() {
+        return title;
+    }
 }
