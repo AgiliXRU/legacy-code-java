@@ -2,6 +2,8 @@ package ru.agilix.workshop.legacy.service;
 
 import org.springframework.stereotype.Service;
 import ru.agilix.workshop.legacy.ClientType;
+import ru.agilix.workshop.legacy.service.clientType.ClientTypeHandler;
+import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
 
 import java.util.List;
 import java.util.Map;

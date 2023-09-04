@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy.service;
+package ru.agilix.workshop.legacy.service.clientType;
 
 import org.springframework.stereotype.Service;
 import ru.agilix.workshop.legacy.ClientType;
@@ -6,7 +6,7 @@ import ru.agilix.workshop.legacy.DataSourceConnector;
 import ru.agilix.workshop.legacy.OracleDataSourceConnector;
 
 @Service
-public class VipClientTypeHandler implements ClientTypeHandler{
+public class VipClientTypeHandler implements ClientTypeHandler {
 
     public Integer calculate(Integer cartAmount) {
 

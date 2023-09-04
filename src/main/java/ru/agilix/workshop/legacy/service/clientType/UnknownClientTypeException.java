@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy.service;
+package ru.agilix.workshop.legacy.service.clientType;
 
 public class UnknownClientTypeException extends Throwable {
     public UnknownClientTypeException(String clientType) {

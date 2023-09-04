@@ -1,9 +1,12 @@
 buildscript {
     ext.spring_version = "5.2.10.RELEASE"
+    ext.spring_boot_version = "2.3.5.RELEASE"
+    ext.spring_dependency_management_version = "1.0.10.RELEASE"
     ext.junit_version = "5.7.0"
     ext.junit_platform_version = "1.7.0"
     ext.cucumber_version = "6.8.1"
     ext.lombok_version = "1.18.20"
+    ext.mockito_core_version = "3.6.0"
 
     repositories {
         maven {
@@ -16,8 +19,8 @@ buildscript {
 plugins {
     id "java"
     id "idea"
-    id "org.springframework.boot" version "2.3.5.RELEASE"
-    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+    id "org.springframework.boot" version "$spring_boot_version"
+    id "io.spring.dependency-management" version "$spring_dependency_management_version"
 }
 
 group = "ru.agilix.workshops.bddandtdd"
@@ -38,13 +41,10 @@ repositories {
 dependencies {
 
     implementation "org.springframework.boot:spring-boot-starter-web"
-    implementation "org.mockito:mockito-core:3.6.0"
+    implementation "org.mockito:mockito-core:$mockito_core_version"
 
-    testImplementation "org.mockito:mockito-junit-jupiter:3.6.0"
-    testImplementation "org.springframework.boot:spring-boot-starter-test:2.3.5.RELEASE"
-//    testImplementation("org.springframework.boot:spring-boot-test") {
-//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-//    }
+    testImplementation "org.mockito:mockito-junit-jupiter:$mockito_core_version"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$spring_boot_version"
     testImplementation "org.springframework:spring-test:$spring_version"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junit_version"

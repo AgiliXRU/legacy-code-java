@@ -1,6 +1,6 @@
 package ru.agilix.workshop.legacy;
 
-import ru.agilix.workshop.legacy.service.UnknownClientTypeException;
+import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
 
 import java.util.Arrays;
 

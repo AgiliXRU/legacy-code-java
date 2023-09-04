@@ -1,7 +1,7 @@
 package ru.agilix.workshop.legacy;
 
 import org.junit.jupiter.api.Test;
-import ru.agilix.workshop.legacy.service.UnknownClientTypeException;
+import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;

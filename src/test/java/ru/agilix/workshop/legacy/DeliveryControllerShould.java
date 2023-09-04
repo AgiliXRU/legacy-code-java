@@ -9,7 +9,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import ru.agilix.workshop.legacy.service.CostCalculationService;
-import ru.agilix.workshop.legacy.service.UnknownClientTypeException;
+import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
