@@ -1,11 +1,11 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import ru.agilix.workshop.legacy.service.CostCalculationService;
-import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
+import ru.andreyTw.delivery.service.CostCalculationService;
+import ru.andreyTw.delivery.service.clientType.UnknownClientTypeException;
 
 @RestController
 @AllArgsConstructor

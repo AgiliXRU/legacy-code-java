@@ -1,13 +1,4 @@
-package ru.agilix.workshop.legacy.service;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import ru.agilix.workshop.legacy.ClientType;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package ru.andreyTw.delivery.service;
 
 public class DeliveryCostCalculationServiceShould {
 

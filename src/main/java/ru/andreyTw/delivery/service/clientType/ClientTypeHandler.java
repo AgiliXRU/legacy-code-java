@@ -1,6 +1,6 @@
-package ru.agilix.workshop.legacy.service.clientType;
+package ru.andreyTw.delivery.service.clientType;
 
-import ru.agilix.workshop.legacy.ClientType;
+import ru.andreyTw.delivery.ClientType;
 
 public interface ClientTypeHandler {
     Integer calculate(Integer cartAmount);

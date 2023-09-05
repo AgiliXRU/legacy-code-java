@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import ru.agilix.workshop.legacy.service.CostCalculationService;
-import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
+import ru.andreyTw.delivery.service.CostCalculationService;
+import ru.andreyTw.delivery.service.clientType.UnknownClientTypeException;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;

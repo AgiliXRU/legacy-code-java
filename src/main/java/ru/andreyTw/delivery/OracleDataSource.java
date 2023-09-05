@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

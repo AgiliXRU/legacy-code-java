@@ -1,7 +1,8 @@
-package ru.agilix.workshop.legacy.service.clientType;
+package ru.andreyTw.delivery.service.clientType;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.andreyTw.delivery.ClientType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,5 +28,10 @@ public class VipClientTypeHandlerShould {
     @Test
     void return_2500_when_VIP_and_2375_are_given() {
         assertEquals(2375, vipClientTypeHandler.calculate(2500).intValue());
+    }
+
+    @Test
+    void returnCommonClientTypeWhenAsked() {
+        assertEquals(ClientType.VIP, vipClientTypeHandler.getType());
     }
 }

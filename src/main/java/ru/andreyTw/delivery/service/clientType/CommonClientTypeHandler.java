@@ -1,7 +1,7 @@
-package ru.agilix.workshop.legacy.service.clientType;
+package ru.andreyTw.delivery.service.clientType;
 
 import org.springframework.stereotype.Service;
-import ru.agilix.workshop.legacy.ClientType;
+import ru.andreyTw.delivery.ClientType;
 
 @Service
 public class CommonClientTypeHandler implements ClientTypeHandler {

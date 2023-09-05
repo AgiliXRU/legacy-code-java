@@ -1,9 +1,9 @@
-package ru.agilix.workshop.legacy.service;
+package ru.andreyTw.delivery.service;
 
 import org.springframework.stereotype.Service;
-import ru.agilix.workshop.legacy.ClientType;
-import ru.agilix.workshop.legacy.service.clientType.ClientTypeHandler;
-import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
+import ru.andreyTw.delivery.ClientType;
+import ru.andreyTw.delivery.service.clientType.ClientTypeHandler;
+import ru.andreyTw.delivery.service.clientType.UnknownClientTypeException;
 
 import java.util.List;
 import java.util.Map;

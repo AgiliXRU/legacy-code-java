@@ -1,7 +1,8 @@
-package ru.agilix.workshop.legacy.service.clientType;
+package ru.andreyTw.delivery.service.clientType;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.andreyTw.delivery.ClientType;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,5 +23,10 @@ public class CommonClientTypeHandlerShould {
     @Test
     void return_1000_when_Obichny_and_1000_are_given() {
         assertEquals(1000, commonClientTypeHandler.calculate(1000).intValue());
+    }
+
+    @Test
+    void returnCommonClientTypeWhenAsked() {
+        assertEquals(ClientType.COMMON, commonClientTypeHandler.getType());
     }
 }

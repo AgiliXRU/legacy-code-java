@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

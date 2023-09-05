@@ -1,9 +1,9 @@
-package ru.agilix.workshop.legacy.service.clientType;
+package ru.andreyTw.delivery.service.clientType;
 
 import org.springframework.stereotype.Service;
-import ru.agilix.workshop.legacy.ClientType;
-import ru.agilix.workshop.legacy.DataSourceConnector;
-import ru.agilix.workshop.legacy.OracleDataSourceConnector;
+import ru.andreyTw.delivery.ClientType;
+import ru.andreyTw.delivery.DataSourceConnector;
+import ru.andreyTw.delivery.OracleDataSourceConnector;
 
 @Service
 public class VipClientTypeHandler implements ClientTypeHandler {

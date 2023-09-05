@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;

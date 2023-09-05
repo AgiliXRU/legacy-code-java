@@ -23,7 +23,7 @@ plugins {
     id "io.spring.dependency-management" version "$spring_dependency_management_version"
 }
 
-group = "ru.agilix.workshops.bddandtdd"
+group = "ru.andreyTw.delivery"
 version = "1.0"
 
 java {

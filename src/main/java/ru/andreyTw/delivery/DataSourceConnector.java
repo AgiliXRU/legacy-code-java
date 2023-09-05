@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 public interface DataSourceConnector {
 

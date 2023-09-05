@@ -1,6 +1,6 @@
-package ru.agilix.workshop.legacy.service;
+package ru.andreyTw.delivery.service;
 
-import ru.agilix.workshop.legacy.service.clientType.UnknownClientTypeException;
+import ru.andreyTw.delivery.service.clientType.UnknownClientTypeException;
 
 public interface CostCalculationService {
     Integer calculate(String clientType, Integer cartAmount)  throws UnknownClientTypeException;

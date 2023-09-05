@@ -1,4 +1,4 @@
-package ru.agilix.workshop.legacy;
+package ru.andreyTw.delivery;
 
 import io.cucumber.junit.platform.engine.Cucumber;
 
