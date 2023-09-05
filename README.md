@@ -50,13 +50,21 @@ class DeliveryControllerShould {
 ```java
     @Test
     void addDeliveryFeeToOrderAmount() {
-        assertEquals(1249, deliveryService.calculate(999));
-    }
+            assertEquals(1249,deliveryService.calculate(999));
+            }
 
-    @Test
-    void NotAddDeliveryFeeToOrderAmountIfItIsEqualOrMoreThen1000() {
-        assertEquals(1000, deliveryService.calculate(1000));
-    }
+@Test
+    void NotAddDeliveryFeeToOrderAmountIfItIsEqualOrMoreThen1000(){
+            assertEquals(1000,deliveryService.calculate(1000));
+            }
 ```
+
 1. Replace call in ```DeliveryContoller```
 1. Extract interface of ```DeliverService```
+
+### ToDo
+
+1. Обновить Spring framework до версии 6+, Spring boot до версии 3+ (учесть, что потребуется использовать Java 17 и
+   Gradle 7.3+).
+2. Перейти на Kotlin в Gradle скриптах.
+3. Постепенный перенос проекта на Kotlin.
