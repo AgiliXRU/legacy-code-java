@@ -65,6 +65,6 @@ class DeliveryControllerShould {
 ### ToDo
 
 1. Обновить Spring framework до версии 6+, Spring boot до версии 3+ (учесть, что потребуется использовать Java 17 и
-   Gradle 7.3+).
+   Gradle 7.3+). -> done
 2. Перейти на Kotlin в Gradle скриптах.
 3. Постепенный перенос проекта на Kotlin.
